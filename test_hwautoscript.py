@@ -19,7 +19,9 @@ while True:
 	time.sleep(240) # keep this setting for one minute (60 seconds)
 
 	print("end of test")
-	quit()
+	pfd.relays[1].value = 0 # pump off
+	pfd.relays[0].value = 0 # lights on
+	break()
 
 
 
