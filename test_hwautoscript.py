@@ -21,7 +21,7 @@ while True:
 	print("end of test")
 	pfd.relays[1].value = 0 # pump off
 	pfd.relays[0].value = 0 # lights on
-	break()
+	break
 
 
 
