@@ -1,3 +1,4 @@
+# test script light and water
 import pifacedigitalio
 import time 
 pfd = pifacedigitalio.PiFaceDigital() 
