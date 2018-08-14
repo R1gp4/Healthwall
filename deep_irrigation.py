@@ -9,7 +9,7 @@ pfd = pifacedigitalio.PiFaceDigital()
 try:
     pfd.relays[1].value = 1 # pump on
     print("irrigating for 40 seconds...")
-    time.sleep(40) # keep this setting for () seconds
+    time.sleep(240) # keep this setting for (240) seconds
     pfd.relays[1].value = 0 # pump off
 except (KeyboardInterrupt, SystemExit):
     pfd.relays[1].value = 0 #if something goes wrong, turn off the pump
