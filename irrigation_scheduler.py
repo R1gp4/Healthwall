@@ -6,20 +6,20 @@ the other to switch on the pump at 8:30 and 20:30 for about 3 minutes each time 
 '''
 
 import sched, time
-import pifacedigitalio # the module or 'hat' on the pi.
-pfd = pifacedigitalio.PiFaceDigital() 
+# import pifacedigitalio # the module or 'hat' on the pi.
+# pfd = pifacedigitalio.PiFaceDigital() 
 s = sched.scheduler(time.time, time.sleep)
 
-def print_time(): print "From print_time", time.time()
+def print_time(): print("From print_time", time.time())
 def pump_on(): pfd.relays[1].value = 1 # pump on
 def pump_off(): pfd.relays[1].value = 0 # pump off
 
 def print_some_times():
-     print time.time()
-     s.enter(5, 1, pump_on ()) #scheduler.enter(delay, priority, action, argument)
-     s.enter(10, 1, pump_off, ())
+     print(time.time())
+     s.enter(5, 1, print_time)      #scheduler.enter(delay, priority, action, argument)
+     s.enter(10, 1, print_time)
      s.run()
-     print time.time()
+     print(time.time())
 
 print_some_times()
 
