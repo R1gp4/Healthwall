@@ -13,3 +13,4 @@ try:
     pfd.relays[1].value = 0 # pump off
 except (KeyboardInterrupt, SystemExit):
     pfd.relays[1].value = 0 #if something goes wrong, turn off the pump
+    print("Interrupted by user")
